@@ -4,7 +4,8 @@ import { FC } from "react";
 export const NavButton: FC<{
   IconComponent: React.ElementType;
   text: string;
-}> = ({ IconComponent, text }) => {
+  isIcontFirst?: boolean;
+}> = ({ IconComponent, text, isIcontFirst = true }) => {
   return (
     <Stack
       direction="row"
@@ -16,16 +17,33 @@ export const NavButton: FC<{
         },
       }}
     >
-      <IconComponent fontSize="small" />
-      <Typography
-        sx={{
-          color: "black",
-          fontWeight: "600",
-          fontSize: "14px",
-        }}
-      >
-        {text}
-      </Typography>
+      {isIcontFirst ? (
+        <>
+          <IconComponent fontSize="small" />
+          <Typography
+            sx={{
+              color: "black",
+              fontWeight: "600",
+              fontSize: "14px",
+            }}
+          >
+            {text}
+          </Typography>
+        </>
+      ) : (
+        <>
+          <Typography
+            sx={{
+              color: "black",
+              fontWeight: "600",
+              fontSize: "14px",
+            }}
+          >
+            {text}
+          </Typography>
+          <IconComponent fontSize="small" />
+        </>
+      )}
     </Stack>
   );
 };

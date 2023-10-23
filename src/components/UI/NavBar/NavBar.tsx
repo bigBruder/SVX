@@ -16,7 +16,7 @@ export const NavBar: FC<Props> = ({
   return (
     <Grid
       container
-      sx={{ height: "112px" }}
+      sx={{ height: "90px" }}
       columns={{ lg: 16 }}
       justifyContent="space-between"
       alignContent="center"
@@ -37,8 +37,8 @@ export const NavBar: FC<Props> = ({
           aria-label="Disabled slider"
         />
       </Grid>
-      <Grid item lg={3} justifySelf="right">
-        <NavButton IconComponent={ClearIcon} text="BACK" />
+      <Grid item container lg={3} justifyContent="center">
+        <NavButton IconComponent={ClearIcon} text="BACK" isIcontFirst={false}/>
       </Grid>
     </Grid>
   );

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { auth } from "./api/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { RoutesName } from "./types/enums/routes";
+import { FormPage } from "./pages/FormPage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -30,6 +31,10 @@ function App() {
   return (
     <>
       <Routes>
+      <Route
+              path={RoutesName.FORM_PAGE}
+              element={<FormPage />}
+            />
         {user ? (
           <>
             <Route

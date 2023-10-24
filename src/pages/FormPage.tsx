@@ -5,18 +5,20 @@ import { GoalInputForm } from "../components/forms/GoalInputForm";
 import { InvestmentRangeForm } from "../components/forms/InvestmentRangeForm";
 import { LossConcernForm } from "../components/forms/LossConcernForm";
 import { InvestmentKnowladgeForm } from "../components/forms/InvestmentKnowladgeForm";
+import { InvestExperienceForm } from "../components/forms/InvestExperienceForm/InvestExperienceForm";
 
 export const FormPage = () => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <Container sx={{ flexGrow: 1 }} maxWidth="md">
         <NavBar stepCount={30} currentStep={5} />
-        {/* <GoalInputForm />
-        <InvestmentRangeForm /> */}
-
-        <InvestmentKnowladgeForm />
+        {/* <GoalInputForm /> */}
+        {/* <InvestmentRangeForm />  */}
+{/*  
+       <InvestmentKnowladgeForm /> */}
 
         {/* <LossConcernForm /> */}
+        <InvestExperienceForm />
       </Container>
       <Container maxWidth="md">
         <Footer />

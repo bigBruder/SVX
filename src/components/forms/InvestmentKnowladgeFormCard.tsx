@@ -9,10 +9,10 @@ export const InvestmentKnowladgeFormCard: FC<{
     <Card sx={{ height: "75px" }}>
       <Grid container>
         <Grid item lg={2}>
-            <Icon fontSize="large"/>
+          <Icon fontSize="large" />
         </Grid>
         <Grid item lg={10}>
-        <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
         </Grid>

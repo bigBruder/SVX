@@ -1,9 +1,7 @@
 import LiveHelpIcon from "@mui/icons-material/LiveHelp";
 import { SpeedDial } from "@mui/material";
 import { useContext } from "react";
-import {
-  MuiBreakpointsContext
-} from "../../contexts/muiBreakpointsContext";
+import { MuiBreakpointsContext } from "../../contexts/muiBreakpointsContext";
 
 export const StyledSpeedDial = () => {
   const { medium } = useContext(MuiBreakpointsContext);

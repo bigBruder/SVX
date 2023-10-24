@@ -24,7 +24,7 @@ export const LossConcernForm = () => {
   const corespondensValue = Math.round((investmentValue / 100) * 35);
 
   const onIvestmentValueChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const value = Number(e.currentTarget.value);
 
@@ -70,7 +70,12 @@ export const LossConcernForm = () => {
         />
       </Grid>
       <Grid item lg={8}>
-        <Box display="flex" justifyContent="space-between" height="220px" sx={{mt: "-20px"}}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          height="220px"
+          sx={{ mt: "-20px" }}
+        >
           <StyledProcentBlock
             heightPercentage={75}
             title={"Government  bonds Europe (2010):\n 4.7%"}
@@ -90,7 +95,16 @@ export const LossConcernForm = () => {
           <StyledProcentBlock heightPercentage={50} title="DAX (2002): 47,1%" />
         </Box>
       </Grid>
-      <Grid container item xs={12} sm={10} md={10} lg={8} spacing={2} sx={{mt: "-60px"}}>
+      <Grid
+        container
+        item
+        xs={12}
+        sm={10}
+        md={10}
+        lg={8}
+        spacing={2}
+        sx={{ mt: "-60px" }}
+      >
         <Typography sx={{ fontSize: "1em" }}>
           {" "}
           Example: With an investment of and a negative performance of

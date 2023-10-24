@@ -4,6 +4,7 @@ import { Footer } from "../components/UI/Footer/Footer";
 import { GoalInputForm } from "../components/forms/GoalInputForm";
 import { InvestmentRangeForm } from "../components/forms/InvestmentRangeForm";
 import { LossConcernForm } from "../components/forms/LossConcernForm";
+import { InvestmentKnowladgeForm } from "../components/forms/InvestmentKnowladgeForm";
 
 export const FormPage = () => {
   return (
@@ -13,7 +14,9 @@ export const FormPage = () => {
         {/* <GoalInputForm />
         <InvestmentRangeForm /> */}
 
-        <LossConcernForm />
+        <InvestmentKnowladgeForm />
+
+        {/* <LossConcernForm /> */}
       </Container>
       <Container maxWidth="md">
         <Footer />

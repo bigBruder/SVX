@@ -17,6 +17,8 @@ import SupportIcon from "@mui/icons-material/Support";
 import LiveHelpIcon from "@mui/icons-material/LiveHelp";
 import { StyledButton } from "../UI/shared/StyledButton";
 import { StyledAccordion } from "../UI/shared/StyledAccordion";
+import { useContext } from "react";
+import { MuiBreakpointsContext } from "../contexts/muiBreakpointsContext";
 
 const data = [
   {
@@ -46,31 +48,45 @@ const data = [
 ];
 
 export const GoalInputForm = () => {
+  const { medium, extraSmall, large, small } = useContext(
+    MuiBreakpointsContext
+  );
+
+  // @ts-ignore
+  window.extraSmall = extraSmall;
+
   return (
     <Grid container justifyItems="center" justifyContent="center" spacing={2}>
-      <Grid item sx={{ height: "68px", position: "relative" }} lg={12}>
+      <Grid
+        item
+        sx={{
+          height: large || medium ? "70px" : small ? "150px" : "200px",
+          position: "relative",
+        }}
+        lg={12}
+      >
         <Typography sx={{ fontSize: "25px", textAlign: "center" }}>
           What goal are you aiming to achieve with your investment?
         </Typography>
         <SpeedDial
-          sx={{ position: "absolute", right: 0 }}
+          sx={{ position: "absolute", right: medium ? "-100px" : 0 }}
           ariaLabel="SpeedDial basic example"
           icon={<LiveHelpIcon fontSize="medium" />}
         ></SpeedDial>
       </Grid>
-      <Grid container item lg={8} spacing={2}>
+      <Grid container item xs={12} sm={10} md={10} lg={8} spacing={2}>
         {data.map((i: any) => (
           <GoalInputFormCard {...i} />
         ))}
       </Grid>
-      <Grid item lg={8}>
+      <Grid item xs={12} sm={10} md={10} lg={8}>
         <StyledAccordion
           title="Why do we need information about your financial situation?"
           description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           malesuada lacus ex, sit amet blandit leo lobortis eget."
         />
       </Grid>
-      <Grid item lg={8}>
+      <Grid item xs={12} sm={10} md={10} lg={8}>
         <StyledButton>Next</StyledButton>
       </Grid>
     </Grid>

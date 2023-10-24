@@ -10,6 +10,9 @@ export const GoalInputFormCard: FC<{
     <Grid item container alignItems="center">
       <Grid
         item
+        xs={2}
+        sm={2}
+        md={2}
         lg={2}
       >
         <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -18,7 +21,7 @@ export const GoalInputFormCard: FC<{
       </Grid>
 
 
-      <Grid item lg={10}>
+      <Grid item xs={10} sm={10} md={10} lg={10}>
         <Card  sx={{"&:hover": {transform: "scale(1.07)", transition: "0.5"}}}>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">

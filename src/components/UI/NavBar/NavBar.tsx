@@ -17,14 +17,15 @@ export const NavBar: FC<Props> = ({
     <Grid
       container
       sx={{ height: "90px" }}
-      columns={{ lg: 16 }}
+      columns={16}
       justifyContent="space-between"
       alignContent="center"
+      spacing={1}
     >
-      <Grid item lg={3}>
+      <Grid item xs={3} sm={3} lg={3}>
         <NavButton IconComponent={ArrowBackIosIcon} text="RESUME LATER" />
       </Grid>
-      <Grid item lg={9}>
+      <Grid item xs={9} sm={9} lg={9}>
         <Slider
           sx={{
             "& .MuiSlider-thumb": {
@@ -37,7 +38,7 @@ export const NavBar: FC<Props> = ({
           aria-label="Disabled slider"
         />
       </Grid>
-      <Grid item container lg={3} justifyContent="center">
+      <Grid item container xs={3} sm={3} lg={3} justifyContent="center">
         <NavButton IconComponent={ClearIcon} text="BACK" isIcontFirst={false}/>
       </Grid>
     </Grid>

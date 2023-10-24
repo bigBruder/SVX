@@ -1,10 +1,18 @@
 import LiveHelpIcon from "@mui/icons-material/LiveHelp";
-import { Alert, Grid, SpeedDial, TextField, Typography } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Grid,
+  SpeedDial,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useContext, useState } from "react";
 import { StyledAccordion } from "../UI/shared/StyledAccordion";
 import { StyledButton } from "../UI/shared/StyledButton";
 import { StyledRange } from "../UI/shared/StyledRange";
 import { MuiBreakpointsContext } from "../contexts/muiBreakpointsContext";
+import { StyledProcentBlock } from "../UI/shared/StyledProcentBlock";
 
 function addCommasToNumber(numb: number) {
   return numb.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -18,9 +26,9 @@ export const LossConcernForm = () => {
   const onIvestmentValueChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const value = Number(e.currentTarget.value)
+    const value = Number(e.currentTarget.value);
 
-    if (isNaN(value)) return
+    if (isNaN(value)) return;
 
     setInvestmentValue(value);
   };
@@ -51,7 +59,7 @@ export const LossConcernForm = () => {
           icon={<LiveHelpIcon fontSize="medium" />}
         ></SpeedDial>
       </Grid>
-      <Grid container item xs={12} sm={10} md={10} lg={8} spacing={2}>
+      <Grid container item xs={12} sm={10} md={10} lg={8} spacing={2} mt="4px">
         <StyledRange
           defaultValue={15}
           startRange={5}
@@ -61,12 +69,33 @@ export const LossConcernForm = () => {
           titleEndStr="%"
         />
       </Grid>
-      <Grid container item xs={12} sm={10} md={10} lg={8} spacing={2}>
-        <Typography sx={{fontSize: "1em"}}>
+      <Grid item lg={8}>
+        <Box display="flex" justifyContent="space-between" height="220px" sx={{mt: "-20px"}}>
+          <StyledProcentBlock
+            heightPercentage={75}
+            title={"Government  bonds Europe (2010):\n 4.7%"}
+          />
+          <StyledProcentBlock
+            heightPercentage={50}
+            title="U.S. government bonds (2009): 16.1%"
+          />
+          <StyledProcentBlock
+            heightPercentage={75}
+            title="Shares USA (2002): 36.5"
+          />
+          <StyledProcentBlock
+            heightPercentage={40}
+            title="Equities Europe (2008): 42.4%"
+          />
+          <StyledProcentBlock heightPercentage={50} title="DAX (2002): 47,1%" />
+        </Box>
+      </Grid>
+      <Grid container item xs={12} sm={10} md={10} lg={8} spacing={2} sx={{mt: "-60px"}}>
+        <Typography sx={{ fontSize: "1em" }}>
           {" "}
           Example: With an investment of and a negative performance of
           <TextField
-            sx={{width: "60px", m: "0 8px", mt: "-5px"}}
+            sx={{ width: "60px", m: "0 8px", mt: "-5px" }}
             id="standard-basic"
             variant="standard"
             value={investmentValue}
@@ -90,7 +119,7 @@ export const LossConcernForm = () => {
       </Grid>
       <Grid item xs={12} sm={10} md={10} lg={8}>
         <StyledAccordion
-          title="Warum benötigen wir diese Informationen?"
+          title="Why do we need this information?"
           description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           malesuada lacus ex, sit amet blandit leo lobortis eget."
         />

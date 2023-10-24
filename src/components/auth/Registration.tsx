@@ -60,7 +60,7 @@ export default function SignUp() {
       setAuthStatus,
       () => registWithEmailAndPassword(email, password),
       "User was registrated",
-      () => navigate("/" + RoutesName.DASHBOARD)
+      () => navigate("/" + RoutesName.DASHBOARD),
     );
   };
 

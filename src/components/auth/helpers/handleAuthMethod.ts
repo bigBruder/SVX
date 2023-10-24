@@ -2,9 +2,8 @@ export const handleAuthMehtod = async (
   setAuthStatus: (state: (prev: any) => any) => void,
   callback: () => Promise<any>,
   onAuthResultMessage: string,
-  navigate: () => void
+  navigate: () => void,
 ) => {
-
   try {
     setAuthStatus((prev: any) => ({
       ...prev,
@@ -18,8 +17,7 @@ export const handleAuthMehtod = async (
       message: onAuthResultMessage,
     }));
 
-    navigate()
-
+    navigate();
   } catch (e: any) {
     setAuthStatus((prev: any) => ({
       ...prev,

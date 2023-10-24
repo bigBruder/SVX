@@ -60,7 +60,7 @@ export default function SignInSide() {
       setAuthStatus,
       () => loginWithEmailAndPassword(email, password),
       "User was registrated",
-      () => navigate("/" + RoutesName.DASHBOARD)
+      () => navigate("/" + RoutesName.DASHBOARD),
     );
   };
 

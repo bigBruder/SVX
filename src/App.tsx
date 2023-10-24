@@ -31,10 +31,7 @@ function App() {
   return (
     <>
       <Routes>
-      <Route
-              path={RoutesName.FORM_PAGE}
-              element={<FormPage />}
-            />
+        <Route path={RoutesName.FORM_PAGE} element={<FormPage />} />
         {user ? (
           <>
             <Route
@@ -45,10 +42,7 @@ function App() {
               path={RoutesName.DASHBOARD}
               element={<Dashboard user={user} isLoading={isLoading} />}
             />
-            <Route
-              path="*"
-              element={<Navigate to={RoutesName.DASHBOARD}/>}
-            />
+            <Route path="*" element={<Navigate to={RoutesName.DASHBOARD} />} />
           </>
         ) : (
           <>

@@ -9,14 +9,16 @@ export const EmailAuthButton: FC<{
   setAuthStatus: (state: any) => void;
   onAuthResultMessage: string;
 }> = ({ bthMessage, setAuthStatus, onAuthResultMessage }) => {
-  const navigation = useNavigate()
+  const navigation = useNavigate();
 
   const onGoogleAuth = async (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
     e.preventDefault();
 
-    await handleAuthMehtod(setAuthStatus, googleAuth, onAuthResultMessage, () => navigation("dashboard"))
+    await handleAuthMehtod(setAuthStatus, googleAuth, onAuthResultMessage, () =>
+      navigation("dashboard"),
+    );
   };
 
   return (

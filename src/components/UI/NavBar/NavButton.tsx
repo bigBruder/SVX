@@ -7,8 +7,7 @@ export const NavButton: FC<{
   text: string;
   isIcontFirst?: boolean;
 }> = ({ IconComponent, text, isIcontFirst = true }) => {
-  const {small} = useContext(MuiBreakpointsContext)
-
+  const { small } = useContext(MuiBreakpointsContext);
 
   return (
     <Stack

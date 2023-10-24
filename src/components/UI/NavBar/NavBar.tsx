@@ -5,14 +5,11 @@ import { NavButton } from "./NavButton";
 import { FC } from "react";
 
 interface Props {
-  stepCount: number; 
-  currentStep: number
+  stepCount: number;
+  currentStep: number;
 }
 
-export const NavBar: FC<Props> = ({
-  stepCount = 30,
-  currentStep = 2,
-}) => {
+export const NavBar: FC<Props> = ({ stepCount = 30, currentStep = 2 }) => {
   return (
     <Grid
       container
@@ -39,7 +36,7 @@ export const NavBar: FC<Props> = ({
         />
       </Grid>
       <Grid item container xs={3} sm={3} lg={3} justifyContent="center">
-        <NavButton IconComponent={ClearIcon} text="BACK" isIcontFirst={false}/>
+        <NavButton IconComponent={ClearIcon} text="BACK" isIcontFirst={false} />
       </Grid>
     </Grid>
   );

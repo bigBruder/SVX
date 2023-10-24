@@ -1,14 +1,4 @@
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Alert,
-  Button,
-  Grid,
-  SpeedDial,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Grid, SpeedDial, Typography } from "@mui/material";
 import { GoalInputFormCard } from "./GoalInputFormCard";
 import RocketIcon from "@mui/icons-material/Rocket";
 import GrassIcon from "@mui/icons-material/Grass";
@@ -48,12 +38,7 @@ const data = [
 ];
 
 export const GoalInputForm = () => {
-  const { medium, extraSmall, large, small } = useContext(
-    MuiBreakpointsContext
-  );
-
-  // @ts-ignore
-  window.extraSmall = extraSmall;
+  const { medium, large, small } = useContext(MuiBreakpointsContext);
 
   return (
     <Grid container justifyItems="center" justifyContent="center" spacing={2}>

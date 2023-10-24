@@ -15,5 +15,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         </BrowserRouter>
       </MuiBreakpointsProvider>
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

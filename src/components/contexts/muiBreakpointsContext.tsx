@@ -9,7 +9,9 @@ interface ContextData {
   extraSmall: boolean;
 }
 
-export const MuiBreakpointsContext = createContext<ContextData>(null as unknown as ContextData);
+export const MuiBreakpointsContext = createContext<ContextData>(
+  null as unknown as ContextData,
+);
 
 export const MuiBreakpointsProvider: FC<{ children: React.ReactNode }> = ({
   children,
@@ -19,11 +21,10 @@ export const MuiBreakpointsProvider: FC<{ children: React.ReactNode }> = ({
   const small = useMediaQuery(theme.breakpoints.up("sm"));
   const extraSmall = useMediaQuery(theme.breakpoints.up("xs"));
 
-  // @ts-ignore
-  window.large = large
-
   return (
-    <MuiBreakpointsContext.Provider value={{ large, medium, small, extraSmall }}>
+    <MuiBreakpointsContext.Provider
+      value={{ large, medium, small, extraSmall }}
+    >
       {children}
     </MuiBreakpointsContext.Provider>
   );

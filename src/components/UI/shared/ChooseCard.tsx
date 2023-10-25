@@ -4,7 +4,7 @@ import { FC, useState } from "react";
 export const ChooseCard: FC<{
   Icon: any;
   title: string;
-  description: string;
+  description?: string;
   isSelected?: boolean;
   index: number;
   handleSelect: (index: number) => void;
@@ -55,7 +55,7 @@ export const ChooseCard: FC<{
           justifyContent="space-between"
         >
           <Typography variant="h6">{title}</Typography>
-          <Typography variant="subtitle1">{description}</Typography>
+          {description && <Typography variant="subtitle1">{description}</Typography>}
         </Box>
       </Grid>
     </Grid>

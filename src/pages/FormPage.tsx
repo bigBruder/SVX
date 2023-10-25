@@ -4,6 +4,9 @@ import { Footer } from "../components/UI/Footer/Footer";
 import { FamiliarService } from "../components/forms/FamiliarServiceForm/FamiliarService";
 import { RevlantExperience } from "../components/forms/RevlantExperience";
 import { ExpenseCoverTime } from "../components/forms/ExpenseConverTime";
+import { InvestmentKnowladgeForm } from "../components/forms/InvestmentKnowladgeForm";
+import { InvestmentRangeForm } from "../components/forms/range/InvestmentRangeForm";
+import { NetMouthIncome } from "../components/forms/range/NetMouhtIncome";
 
 export const FormPage = () => {
   return (
@@ -11,15 +14,16 @@ export const FormPage = () => {
       <Container sx={{ flexGrow: 1 }} maxWidth="md">
         <NavBar stepCount={30} currentStep={5} />
         {/* <GoalInputForm /> */}
-        {/* <InvestmentRangeForm />  */}
-        {/*  
-       <InvestmentKnowladgeForm /> */}
+        {/* <InvestmentRangeForm /> */}
+
+        {/* <InvestmentKnowladgeForm />  */}
 
         {/* <LossConcernForm /> */}
         {/* <InvestExperienceForm /> */}
         {/* <FamiliarService /> */}
         {/* <RevlantExperience /> */}
-        <ExpenseCoverTime/>
+        {/* <ExpenseCoverTime/> */}
+        {<NetMouthIncome />}
       </Container>
       <Container maxWidth="md">
         <Footer />

@@ -7,18 +7,38 @@ import { MuiBreakpointsContext } from "../../contexts/muiBreakpointsContext";
 import { QuestionMarkLayout } from "../../layout/QuestionMarkLayout";
 
 interface Props {
-    cardsArr: any[]
-    Accordion: React.ReactNode,
-    title: string,
-    subtitle?: string
+  cardsArr: any[];
+  Accordion: React.ReactNode;
+  Alert?: React.ReactNode;
+  title: string;
+  subtitle?: string;
+  isShowNoneBth?: boolean;
+  isMultiple?: boolean;
 }
 
-
-export const ChooseForm: FC<Props> = ({cardsArr, Accordion, title, subtitle = "Multiple selection possible"}) => {
+export const ChooseForm: FC<Props> = ({
+  cardsArr,
+  Accordion,
+  Alert,
+  title,
+  subtitle = "Multiple selection possible",
+  isShowNoneBth = true,
+  isMultiple = true,
+}) => {
   const { medium } = useContext(MuiBreakpointsContext);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
 
   const onCardClick = (index: number) => {
+    if (!isMultiple) {
+      if (selectedItems.length) {
+        setSelectedItems([]);
+      } else {
+        setSelectedItems([index]);
+      }
+
+      return;
+    }
+
     if (selectedItems.includes(index)) {
       const filtredArr = selectedItems.filter((i) => i !== index);
       setSelectedItems(filtredArr);
@@ -39,12 +59,12 @@ export const ChooseForm: FC<Props> = ({cardsArr, Accordion, title, subtitle = "M
         spacing={3}
       >
         <Grid item xs={12} sm={10} md={10} lg={8}>
-          <Typography sx={{ fontSize: "25px" }}>
-            {title}
-          </Typography>
-          <Typography variant="subtitle1" sx={{ mt: "10px" }}>
-           {subtitle}
-          </Typography>
+          <Typography sx={{ fontSize: "25px" }}>{title}</Typography>
+          {isMultiple && (
+            <Typography variant="subtitle1" sx={{ mt: "10px" }}>
+              {subtitle}
+            </Typography>
+          )}
         </Grid>
 
         {cardsArr.map((cartItem: any, index) => {
@@ -77,14 +97,20 @@ export const ChooseForm: FC<Props> = ({cardsArr, Accordion, title, subtitle = "M
           );
         })}
 
-        <Grid item xs={12} sm={10} md={10} lg={8}>
-          <NoneButton
-            cardSx={{ pl: "20px" }}
-            onClick={() => {
-              setSelectedItems([]);
-            }}
-          />
-        </Grid>
+        {isShowNoneBth && (
+          <Grid item xs={12} sm={10} md={10} lg={8}>
+            <NoneButton
+              cardSx={{ pl: "20px" }}
+              onClick={() => setSelectedItems([])}
+            />
+          </Grid>
+        )}
+
+        {Alert && (
+          <Grid item xs={12} sm={10} md={10} lg={8}>
+            {Alert}
+          </Grid>
+        )}
 
         <Grid item xs={12} sm={10} md={10} lg={8}>
           {Accordion}

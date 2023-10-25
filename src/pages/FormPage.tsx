@@ -7,6 +7,7 @@ import { ExpenseCoverTime } from "../components/forms/ExpenseConverTime";
 import { InvestmentKnowladgeForm } from "../components/forms/InvestmentKnowladgeForm";
 import { InvestmentRangeForm } from "../components/forms/range/InvestmentRangeForm";
 import { NetMouthIncome } from "../components/forms/range/NetMouhtIncome";
+import { DisposableIncome } from "../components/forms/range/DisposableIncome";
 
 export const FormPage = () => {
   return (
@@ -23,7 +24,8 @@ export const FormPage = () => {
         {/* <FamiliarService /> */}
         {/* <RevlantExperience /> */}
         {/* <ExpenseCoverTime/> */}
-        {<NetMouthIncome />}
+        {/* {<NetMouthIncome />} */}
+        <DisposableIncome />
       </Container>
       <Container maxWidth="md">
         <Footer />

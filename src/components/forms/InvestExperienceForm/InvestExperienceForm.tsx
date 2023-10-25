@@ -1,20 +1,13 @@
-import { Alert, Grid, SpeedDial, Typography } from "@mui/material";
-import { GoalInputFormCard } from "../GoalInputFormCard";
-import RocketIcon from "@mui/icons-material/Rocket";
-import GrassIcon from "@mui/icons-material/Grass";
-import SavingsIcon from "@mui/icons-material/Savings";
-import SupportIcon from "@mui/icons-material/Support";
 import LiveHelpIcon from "@mui/icons-material/LiveHelp";
-import { StyledButton } from "../../UI/shared/StyledButton";
-import { StyledAccordion } from "../../UI/shared/StyledAccordion";
+import { Grid, SpeedDial, Typography } from "@mui/material";
 import { useContext } from "react";
+import { StyledAccordion } from "../../UI/shared/StyledAccordion";
+import { StyledButton } from "../../UI/shared/StyledButton";
 import { MuiBreakpointsContext } from "../../contexts/muiBreakpointsContext";
-import { InvestmentKnowladgeFormCard } from "../InvestmentKnowladgeFormCard";
-import NotInterestedIcon from "@mui/icons-material/NotInterested";
 import { InvestExperienceItem } from "./InvestExperienceItem";
 
-import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import CorporateFareIcon from "@mui/icons-material/CorporateFare";
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 
 const data = [
   {

@@ -1,13 +1,11 @@
-import { TitleOutlined } from "@mui/icons-material";
 import {
   Box,
   FormControl,
   FormControlLabel,
-  FormLabel,
   Grid,
   Radio,
   RadioGroup,
-  Typography,
+  Typography
 } from "@mui/material";
 import { FC, useContext } from "react";
 import { MuiBreakpointsContext } from "../../contexts/muiBreakpointsContext";
@@ -36,10 +34,7 @@ export const InvestExperienceItem: FC<{ Icon: any; title: string }> = ({
       </Grid>
 
       <Grid item xs={16} sm={9}>
-        <Box
-          display="flex"
-          justifyContent={small ? "flex-end" : "flex-start"}
-        >
+        <Box display="flex" justifyContent={small ? "flex-end" : "flex-start"}>
           <FormControl>
             <RadioGroup
               row

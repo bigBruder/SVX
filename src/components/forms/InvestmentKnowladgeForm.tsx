@@ -1,16 +1,15 @@
-import { Alert, Grid, SpeedDial, Typography } from "@mui/material";
-import { GoalInputFormCard } from "./GoalInputFormCard";
-import RocketIcon from "@mui/icons-material/Rocket";
 import GrassIcon from "@mui/icons-material/Grass";
+import LiveHelpIcon from "@mui/icons-material/LiveHelp";
+import NotInterestedIcon from "@mui/icons-material/NotInterested";
+import RocketIcon from "@mui/icons-material/Rocket";
 import SavingsIcon from "@mui/icons-material/Savings";
 import SupportIcon from "@mui/icons-material/Support";
-import LiveHelpIcon from "@mui/icons-material/LiveHelp";
-import { StyledButton } from "../UI/shared/StyledButton";
-import { StyledAccordion } from "../UI/shared/StyledAccordion";
+import { Alert, Grid, SpeedDial, Typography } from "@mui/material";
 import { useContext } from "react";
+import { NoneButton } from "../UI/shared/NoneButton";
+import { StyledAccordion } from "../UI/shared/StyledAccordion";
+import { StyledButton } from "../UI/shared/StyledButton";
 import { MuiBreakpointsContext } from "../contexts/muiBreakpointsContext";
-import { InvestmentKnowladgeFormCard } from "./InvestmentKnowladgeFormCard";
-import NotInterestedIcon from "@mui/icons-material/NotInterested";
 
 const data = [
   {
@@ -51,7 +50,7 @@ export const InvestmentKnowladgeForm = () => {
           In which investments do you have knowledge?
         </Typography>
         <Typography sx={{ fontSize: "15px" }}>
-          Multiple selection possible 
+          Multiple selection possible
         </Typography>
         <SpeedDial
           sx={{ position: "absolute", right: medium ? "-100px" : 0 }}
@@ -63,12 +62,12 @@ export const InvestmentKnowladgeForm = () => {
         {data.map((i: any) => (
           <Grid item md={6}>
             {" "}
-            <InvestmentKnowladgeFormCard {...i} />
+            <NoneButton {...i} />
           </Grid>
         ))}
       </Grid>
       <Grid item xs={12} sm={10} lg={8}>
-        <InvestmentKnowladgeFormCard title="Keine" Icon={NotInterestedIcon} />
+        <NoneButton title="Keine" Icon={NotInterestedIcon} />
       </Grid>
       <Grid item xs={12} sm={10} md={10} lg={8}>
         <Alert severity="info">

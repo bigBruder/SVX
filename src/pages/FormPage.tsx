@@ -8,6 +8,7 @@ import { InvestmentKnowladgeForm } from "../components/forms/InvestmentKnowladge
 import { InvestmentRangeForm } from "../components/forms/range/InvestmentRangeForm";
 import { NetMouthIncome } from "../components/forms/range/NetMouhtIncome";
 import { DisposableIncome } from "../components/forms/range/DisposableIncome";
+import { NotDisposableWealth } from "../components/forms/range/NonDisposableWealth";
 
 export const FormPage = () => {
   return (
@@ -25,7 +26,8 @@ export const FormPage = () => {
         {/* <RevlantExperience /> */}
         {/* <ExpenseCoverTime/> */}
         {/* {<NetMouthIncome />} */}
-        <DisposableIncome />
+        {/* <DisposableIncome /> */}
+      <NotDisposableWealth />
       </Container>
       <Container maxWidth="md">
         <Footer />

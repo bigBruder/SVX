@@ -2,9 +2,10 @@ import { Box, Grid, Typography } from "@mui/material";
 import { FC, useState } from "react";
 
 export const ChooseCard: FC<{
-  Icon: any;
+  Icon?: any;
   title: string;
   description?: string;
+  subtitle?: string;
   isSelected?: boolean;
   index: number;
   handleSelect: (index: number) => void;
@@ -15,14 +16,16 @@ export const ChooseCard: FC<{
   isSelected = false,
   handleSelect,
   index,
+  subtitle
 }) => {
   const [isShowDefaultBg, setIsShowDefaultBg] = useState(false);
+  const subtitleField = description || subtitle
 
   return (
     <Grid
       item
       container
-      height="100px"
+      minHeight="100px"
       alignItems="center"
       sx={{
         backgroundColor: isSelected ? "#71b6f7" : "",
@@ -45,17 +48,21 @@ export const ChooseCard: FC<{
         setIsShowDefaultBg(false);
       }}
     >
-      <Grid item xs={2}>
-        <Icon sx={{ width: "48px", height: "48px" }} />
-      </Grid>
-      <Grid item xs={10}>
+      {Icon && (
+        <Grid item xs={2}>
+          <Icon sx={{ width: "48px", height: "48px" }} />
+        </Grid>
+      )}
+      <Grid item xs={Icon ? 10 : 12}>
         <Box
           display="flex"
           flexDirection="column"
           justifyContent="space-between"
         >
           <Typography variant="h6">{title}</Typography>
-          {description && <Typography variant="subtitle1">{description}</Typography>}
+          {subtitleField&& (
+            <Typography variant="subtitle1">{subtitleField}</Typography>
+          )}
         </Box>
       </Grid>
     </Grid>

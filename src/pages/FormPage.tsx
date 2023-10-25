@@ -4,6 +4,7 @@ import { Footer } from "../components/UI/Footer/Footer";
 import { FamiliarService } from "../components/forms/FamiliarServiceForm/FamiliarService";
 import { RevlantExperience } from "../components/forms/RevlantExperience";
 import { ExpenseCoverTime } from "../components/forms/ExpenseConverTime";
+import { OwnCriteria } from "../components/forms/OwnCriteria";
 
 export const FormPage = () => {
   return (
@@ -19,7 +20,8 @@ export const FormPage = () => {
         {/* <InvestExperienceForm /> */}
         {/* <FamiliarService /> */}
         {/* <RevlantExperience /> */}
-        <ExpenseCoverTime/>
+        {/* <ExpenseCoverTime/> */}
+        <OwnCriteria />
       </Container>
       <Container maxWidth="md">
         <Footer />

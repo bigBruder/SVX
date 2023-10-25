@@ -1,7 +1,7 @@
 import { Box, Grid, Slider, Typography } from "@mui/material";
 import { FC, useState } from "react";
 
-interface Props {
+export interface RangeProps {
   leftRngName: string;
   rightRngName: string;
   titleEndStr: string;
@@ -11,7 +11,11 @@ interface Props {
   endRange: number;
 }
 
-export const StyledRange: FC<Partial<Props>> = ({
+function formatNumberWithPeriods(number: number) {
+  return number.toLocaleString('en-US', { useGrouping: true }).replace(/,/g, '.');;
+}
+
+export const StyledRange: FC<Partial<RangeProps>> = ({
   defaultValue,
   leftRngName = "less than 1.000 EUR",
   rightRngName = "more than 5.000.000 EUR",
@@ -28,7 +32,7 @@ export const StyledRange: FC<Partial<Props>> = ({
 
   return (
     <>
-      <Grid item lg={12}>
+      <Grid item xs={12}>
         <Box>
           <Typography
             sx={{
@@ -40,11 +44,11 @@ export const StyledRange: FC<Partial<Props>> = ({
               textAlign: "center",
             }}
           >
-            {`${currentValue} ${titleEndStr}`}
+            {`${formatNumberWithPeriods(currentValue)} ${titleEndStr}`}
           </Typography>
         </Box>
       </Grid>
-      <Grid item lg={12}>
+      <Grid item xs={12}>
         <Box>
           <Slider
             min={startRange}

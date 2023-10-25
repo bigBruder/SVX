@@ -1,9 +1,9 @@
 import { StyledAccordion } from "../../UI/shared/StyledAccordion";
-import { ChooseForm } from "../ChooseForm/ChooseForm";
+import { ChooseForm } from "../FormTemplates/ChooseForm";
 
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
-import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import ShowChartIcon from "@mui/icons-material/ShowChart";
+import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 
 const cardsArr = [
   {

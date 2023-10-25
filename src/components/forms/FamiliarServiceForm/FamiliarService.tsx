@@ -13,7 +13,7 @@ const cardsArr = [
   },
   {
     Icon: WorkOutlineIcon,
-    title: "Vermögensverwaltung",
+    title: "Asset Management",
     description: "An asset manager makes investment decisions for you.",
   },
   {

@@ -10,11 +10,11 @@ interface Props {
     cardsArr: any[]
     Accordion: React.ReactNode,
     title: string,
-    subtitle: string
+    subtitle?: string
 }
 
 
-export const ChooseForm: FC<Props> = ({cardsArr, Accordion, title, subtitle}) => {
+export const ChooseForm: FC<Props> = ({cardsArr, Accordion, title, subtitle = "Multiple selection possible"}) => {
   const { medium } = useContext(MuiBreakpointsContext);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
 

@@ -1,10 +1,7 @@
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import ShowChartIcon from "@mui/icons-material/ShowChart";
-import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import { StyledAccordion } from "../UI/shared/StyledAccordion";
 import { ChooseForm } from "./FormTemplates/ChooseForm";
 
-import WorkIcon from "@mui/icons-material/Work";
 import SchoolIcon from "@mui/icons-material/School";
 
 const cardsArr = [

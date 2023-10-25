@@ -1,9 +1,10 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
 
-export const StyledButton: FC<{ children: string }> = ({ children }) => {
+export const StyledButton: FC<{ children: string } & any> = ({ children, ...props }) => {
   return (
     <Button
+      {...props}
       variant="contained"
       fullWidth
       sx={{

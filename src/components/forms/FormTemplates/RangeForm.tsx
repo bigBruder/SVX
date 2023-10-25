@@ -4,16 +4,23 @@ import { StyledButton } from "../../UI/shared/StyledButton";
 import { RangeProps, StyledRange } from "../../UI/shared/StyledRange";
 import { MuiBreakpointsContext } from "../../contexts/muiBreakpointsContext";
 import { QuestionMarkLayout } from "../../layout/QuestionMarkLayout";
+import { FormShowContext } from "../../contexts/formShow";
 
 interface Props {
   title: string;
   Alert?: React.ReactNode;
   Accordion?: React.ReactNode;
-  rangeSetting?: Partial<RangeProps>
+  rangeSetting?: Partial<RangeProps>;
 }
 
-export const RangeForm: FC<Props> = ({ title, Alert, Accordion, rangeSetting }) => {
+export const RangeForm: FC<Props> = ({
+  title,
+  Alert,
+  Accordion,
+  rangeSetting,
+}) => {
   const { medium } = useContext(MuiBreakpointsContext);
+  const { currentFormIndex, setCurrentFormIndex } = useContext(FormShowContext);
 
   return (
     <QuestionMarkLayout>
@@ -33,9 +40,7 @@ export const RangeForm: FC<Props> = ({ title, Alert, Accordion, rangeSetting }) 
           </Typography>
         </Grid>
         <Grid container item xs={12} sm={10} md={10} lg={8} spacing={2}>
-          <StyledRange
-            {...rangeSetting}
-          />
+          <StyledRange {...rangeSetting} />
         </Grid>
         {Alert && (
           <Grid item xs={12} sm={10} md={10} lg={8}>
@@ -49,7 +54,11 @@ export const RangeForm: FC<Props> = ({ title, Alert, Accordion, rangeSetting }) 
         )}
 
         <Grid item xs={12} sm={10} md={10} lg={8}>
-          <StyledButton>Next</StyledButton>
+          <StyledButton
+            onClick={() => setCurrentFormIndex(currentFormIndex + 1)}
+          >
+            Next
+          </StyledButton>
         </Grid>
       </Grid>
     </QuestionMarkLayout>

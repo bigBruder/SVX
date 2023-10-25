@@ -1,17 +1,12 @@
 import GrassIcon from "@mui/icons-material/Grass";
-import LiveHelpIcon from "@mui/icons-material/LiveHelp";
-import NotInterestedIcon from "@mui/icons-material/NotInterested";
 import RocketIcon from "@mui/icons-material/Rocket";
 import SavingsIcon from "@mui/icons-material/Savings";
 import SupportIcon from "@mui/icons-material/Support";
-import { Alert, Grid, SpeedDial, Typography } from "@mui/material";
-import { useContext } from "react";
-import { NoneButton } from "../UI/shared/NoneButton";
+import { Alert } from "@mui/material";
 import { StyledAccordion } from "../UI/shared/StyledAccordion";
-import { StyledButton } from "../UI/shared/StyledButton";
-import { MuiBreakpointsContext } from "../contexts/muiBreakpointsContext";
+import { ChooseForm } from "./FormTemplates/ChooseForm";
 
-const data = [
+const cardsArr = [
   {
     Icon: RocketIcon,
     title: "Significantly increase assets",
@@ -31,61 +26,27 @@ const data = [
 ];
 
 export const InvestmentKnowladgeForm = () => {
-  const { medium, large, small } = useContext(MuiBreakpointsContext);
-
   return (
-    <Grid container justifyItems="center" justifyContent="center" spacing={2}>
-      <Grid
-        item
-        sx={{
-          height: large || medium ? "70px" : small ? "150px" : "200px",
-          position: "relative",
-        }}
-        xs={12}
-        sm={10}
-        md={10}
-        lg={8}
-      >
-        <Typography sx={{ fontSize: "25px" }}>
-          In which investments do you have knowledge?
-        </Typography>
-        <Typography sx={{ fontSize: "15px" }}>
-          Multiple selection possible
-        </Typography>
-        <SpeedDial
-          sx={{ position: "absolute", right: medium ? "-100px" : 0 }}
-          ariaLabel="SpeedDial basic example"
-          icon={<LiveHelpIcon fontSize="medium" />}
-        ></SpeedDial>
-      </Grid>
-      <Grid container item xs={12} sm={10} md={10} lg={8} spacing={2}>
-        {data.map((i: any) => (
-          <Grid item md={6}>
-            {" "}
-            <NoneButton {...i} />
-          </Grid>
-        ))}
-      </Grid>
-      <Grid item xs={12} sm={10} lg={8}>
-        <NoneButton title="Keine" Icon={NotInterestedIcon} />
-      </Grid>
-      <Grid item xs={12} sm={10} md={10} lg={8}>
+    <ChooseForm
+      isCardsShouldDevide={true}
+      cardsArr={cardsArr}
+      title="In which investments do you have knowledge?"
+      subtitle="Multiple selection possible"
+      isMultiple={true}
+      Alert={
         <Alert severity="info">
           Note: Knowledge means that you have a basic understanding of the risks
           of the respective asset class. Your own investment experience is
           helpful, but not absolutely necessary. necessary.
         </Alert>
-      </Grid>
-      <Grid item xs={12} sm={10} md={10} lg={8}>
+      }
+      Accordion={
         <StyledAccordion
           title="Why do we need information about your financial situation?"
           description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           malesuada lacus ex, sit amet blandit leo lobortis eget."
         />
-      </Grid>
-      <Grid item xs={12} sm={10} md={10} lg={8}>
-        <StyledButton>Next</StyledButton>
-      </Grid>
-    </Grid>
+      }
+    />
   );
 };

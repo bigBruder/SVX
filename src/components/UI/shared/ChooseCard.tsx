@@ -22,7 +22,7 @@ export const ChooseCard: FC<{
     <Grid
       item
       container
-      height="100px"
+      minHeight="100px"
       alignItems="center"
       sx={{
         backgroundColor: isSelected ? "#71b6f7" : "",
@@ -33,7 +33,7 @@ export const ChooseCard: FC<{
         borderRadius: "10px",
         border: "1px solid #ccc",
         boxShadow: "0px 1px 3px rgba(0, 0, 0, 0.1)",
-        pl: "20px",
+        p: "20px 0 20px 20px"
       }}
       onClick={() => {
         if (isSelected) {

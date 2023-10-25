@@ -9,8 +9,9 @@ import { StyledButton } from "../UI/shared/StyledButton";
 import { StyledAccordion } from "../UI/shared/StyledAccordion";
 import { useContext } from "react";
 import { MuiBreakpointsContext } from "../contexts/muiBreakpointsContext";
+import { ChooseForm } from "./FormTemplates/ChooseForm";
 
-const data = [
+const cardsArr = [
   {
     Icon: RocketIcon,
     title: "Significantly increase assets",
@@ -38,42 +39,18 @@ const data = [
 ];
 
 export const GoalInputForm = () => {
-  const { medium, large, small } = useContext(MuiBreakpointsContext);
-
   return (
-    <Grid container justifyItems="center" justifyContent="center" spacing={2}>
-      <Grid
-        item
-        sx={{
-          height: large || medium ? "70px" : small ? "150px" : "200px",
-          position: "relative",
-        }}
-        lg={12}
-      >
-        <Typography sx={{ fontSize: "25px", textAlign: "center" }}>
-          What goal are you aiming to achieve with your investment?
-        </Typography>
-        <SpeedDial
-          sx={{ position: "absolute", right: medium ? "-100px" : 0 }}
-          ariaLabel="SpeedDial basic example"
-          icon={<LiveHelpIcon fontSize="medium" />}
-        ></SpeedDial>
-      </Grid>
-      <Grid container item xs={12} sm={10} md={10} lg={8} spacing={2}>
-        {data.map((i: any) => (
-          <GoalInputFormCard {...i} />
-        ))}
-      </Grid>
-      <Grid item xs={12} sm={10} md={10} lg={8}>
+    <ChooseForm
+      Accordion={
         <StyledAccordion
           title="Why do we need information about your financial situation?"
           description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget."
+        malesuada lacus ex, sit amet blandit leo lobortis eget."
         />
-      </Grid>
-      <Grid item xs={12} sm={10} md={10} lg={8}>
-        <StyledButton>Next</StyledButton>
-      </Grid>
-    </Grid>
+      }
+      cardsArr={cardsArr}
+      title="What goal are you aiming to achieve with your investment?"
+      isMultiple={false}
+    />
   );
 };

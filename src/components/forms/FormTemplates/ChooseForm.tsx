@@ -5,6 +5,7 @@ import { NoneButton } from "../../UI/shared/NoneButton";
 import { StyledButton } from "../../UI/shared/StyledButton";
 import { MuiBreakpointsContext } from "../../contexts/muiBreakpointsContext";
 import { QuestionMarkLayout } from "../../layout/QuestionMarkLayout";
+import { FormShowContext } from "../../contexts/formShow";
 
 interface Props {
   cardsArr: any[];
@@ -14,6 +15,7 @@ interface Props {
   subtitle?: string;
   isShowNoneBth?: boolean;
   isMultiple?: boolean;
+  isCardsShouldDevide?: boolean;
 }
 
 export const ChooseForm: FC<Props> = ({
@@ -24,7 +26,9 @@ export const ChooseForm: FC<Props> = ({
   subtitle = "Multiple selection possible",
   isShowNoneBth = true,
   isMultiple = true,
+  isCardsShouldDevide = false
 }) => {
+  const {setCurrentFormIndex, currentFormIndex} = useContext(FormShowContext)
   const { medium } = useContext(MuiBreakpointsContext);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
 
@@ -58,7 +62,7 @@ export const ChooseForm: FC<Props> = ({
         sx={{ order: medium ? -1 : 1 }}
         spacing={3}
       >
-        <Grid item xs={12} sm={10} md={10} lg={8}>
+        <Grid item xs={12} sm={10} md={10}>
           <Typography sx={{ fontSize: "25px" }}>{title}</Typography>
           {isMultiple && (
             <Typography variant="subtitle1" sx={{ mt: "10px" }}>
@@ -71,10 +75,8 @@ export const ChooseForm: FC<Props> = ({
           return (
             <Grid
               item
-              xs={12}
-              sm={10}
-              md={10}
-              lg={8}
+              xs={isCardsShouldDevide ? 5 : 12}
+              sm={isCardsShouldDevide ? 5 : 10}
               spacing={2}
               rowGap={2}
               key={index}
@@ -98,7 +100,7 @@ export const ChooseForm: FC<Props> = ({
         })}
 
         {isShowNoneBth && (
-          <Grid item xs={12} sm={10} md={10} lg={8}>
+          <Grid item xs={12} sm={10} md={10}>
             <NoneButton
               cardSx={{ pl: "20px" }}
               onClick={() => setSelectedItems([])}
@@ -107,16 +109,16 @@ export const ChooseForm: FC<Props> = ({
         )}
 
         {Alert && (
-          <Grid item xs={12} sm={10} md={10} lg={8}>
+          <Grid item xs={12} sm={10} md={10}>
             {Alert}
           </Grid>
         )}
 
-        <Grid item xs={12} sm={10} md={10} lg={8}>
+        <Grid item xs={12} sm={10} md={10}>
           {Accordion}
         </Grid>
-        <Grid item xs={12} sm={10} md={10} lg={8}>
-          <StyledButton>Next</StyledButton>
+        <Grid item xs={12} sm={10} md={10}>
+          <StyledButton onClick={() => setCurrentFormIndex(currentFormIndex + 1)}>Next</StyledButton>
         </Grid>
       </Grid>
     </QuestionMarkLayout>

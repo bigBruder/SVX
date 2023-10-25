@@ -2,7 +2,8 @@ import { Grid, Slider } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { NavButton } from "./NavButton";
-import { FC } from "react";
+import { FC, useContext } from "react";
+import { FormShowContext } from "../../contexts/formShow";
 
 interface Props {
   stepCount: number;
@@ -10,6 +11,8 @@ interface Props {
 }
 
 export const NavBar: FC<Props> = ({ stepCount = 30, currentStep = 2 }) => {
+  const { currentFormIndex, setCurrentFormIndex } = useContext(FormShowContext);
+
   return (
     <Grid
       container
@@ -20,7 +23,11 @@ export const NavBar: FC<Props> = ({ stepCount = 30, currentStep = 2 }) => {
       spacing={1}
     >
       <Grid item xs={3} sm={3} lg={3}>
-        <NavButton IconComponent={ArrowBackIosIcon} text="RESUME LATER" />
+        <NavButton
+          IconComponent={ArrowBackIosIcon}
+          text="RESUME LATER"
+          onClick={() => setCurrentFormIndex(currentFormIndex - 1)}
+        />
       </Grid>
       <Grid item xs={9} sm={9} lg={9}>
         <Slider

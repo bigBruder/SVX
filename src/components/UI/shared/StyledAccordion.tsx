@@ -9,9 +9,9 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import { FC } from "react";
 
-export const StyledAccordion: FC<{ title: string; description: string }> = ({
-  title,
-  description,
+export const StyledAccordion: FC<{ title?: string; description?: string }> = ({
+  title = "Why do we need this information?",
+  description = "some desc",
 }) => {
   return (
     <Accordion>

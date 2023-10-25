@@ -2,6 +2,7 @@ import { Box, Container } from "@mui/material";
 import { NavBar } from "../components/UI/NavBar/NavBar";
 import { Footer } from "../components/UI/Footer/Footer";
 import { FamiliarService } from "../components/forms/FamiliarServiceForm/FamiliarService";
+import { RevlantExperience } from "../components/forms/RevlantExperience";
 
 export const FormPage = () => {
   return (
@@ -15,7 +16,8 @@ export const FormPage = () => {
 
         {/* <LossConcernForm /> */}
         {/* <InvestExperienceForm /> */}
-        <FamiliarService />
+        {/* <FamiliarService /> */}
+        <RevlantExperience />
       </Container>
       <Container maxWidth="md">
         <Footer />

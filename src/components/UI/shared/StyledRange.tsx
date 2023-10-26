@@ -12,7 +12,9 @@ export interface RangeProps {
 }
 
 function formatNumberWithPeriods(number: number) {
-  return number.toLocaleString('en-US', { useGrouping: true }).replace(/,/g, '.');;
+  return number
+    .toLocaleString("en-US", { useGrouping: true })
+    .replace(/,/g, ".");
 }
 
 export const StyledRange: FC<Partial<RangeProps>> = ({

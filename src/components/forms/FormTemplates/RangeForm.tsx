@@ -20,7 +20,7 @@ export const RangeForm: FC<Props> = ({
   rangeSetting,
 }) => {
   const { medium } = useContext(MuiBreakpointsContext);
-  const { currentFormIndex, setCurrentFormIndex } = useContext(FormShowContext);
+  const { increaseCurrentFormIndex } = useContext(FormShowContext);
 
   return (
     <QuestionMarkLayout>
@@ -54,9 +54,7 @@ export const RangeForm: FC<Props> = ({
         )}
 
         <Grid item xs={12} sm={10} md={10} lg={8}>
-          <StyledButton
-            onClick={() => setCurrentFormIndex(currentFormIndex + 1)}
-          >
+          <StyledButton onClick={() => increaseCurrentFormIndex()}>
             Next
           </StyledButton>
         </Grid>

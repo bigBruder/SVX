@@ -1,9 +1,5 @@
 import NotInterestedIcon from "@mui/icons-material/NotInterested";
-import {
-  Card,
-  Grid,
-  Typography
-} from "@mui/material";
+import { Card, Grid, Typography } from "@mui/material";
 import { FC } from "react";
 
 export const NoneButton: FC<

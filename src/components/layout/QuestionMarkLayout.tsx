@@ -1,6 +1,6 @@
-import LiveHelpIcon from "@mui/icons-material/LiveHelp";
-import { Grid, SpeedDial } from "@mui/material";
+import { Grid } from "@mui/material";
 import { FC } from "react";
+import { SpeedDialTooltipOpen } from "../UI/shared/StyledSpeedDial";
 
 export const QuestionMarkLayout: FC<{ children: React.ReactNode }> = ({
   children,
@@ -10,10 +10,7 @@ export const QuestionMarkLayout: FC<{ children: React.ReactNode }> = ({
       {children}
       <Grid container item md={1} alignContent="start" justifyContent="end">
         <Grid item>
-          <SpeedDial
-            ariaLabel="SpeedDial basic example"
-            icon={<LiveHelpIcon fontSize="medium" />}
-          ></SpeedDial>
+          <SpeedDialTooltipOpen />
         </Grid>
       </Grid>
     </Grid>

@@ -33,7 +33,7 @@ export const ChooseCard: FC<{
         borderRadius: "10px",
         border: "1px solid #ccc",
         boxShadow: "0px 1px 3px rgba(0, 0, 0, 0.1)",
-        p: "20px 0 20px 20px"
+        p: "20px 0 20px 20px",
       }}
       onClick={() => {
         if (isSelected) {
@@ -55,7 +55,9 @@ export const ChooseCard: FC<{
           justifyContent="space-between"
         >
           <Typography variant="h6">{title}</Typography>
-          {description && <Typography variant="subtitle1">{description}</Typography>}
+          {description && (
+            <Typography variant="subtitle1">{description}</Typography>
+          )}
         </Box>
       </Grid>
     </Grid>

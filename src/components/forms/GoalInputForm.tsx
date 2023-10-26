@@ -1,14 +1,8 @@
-import { Grid, SpeedDial, Typography } from "@mui/material";
-import { GoalInputFormCard } from "./GoalInputFormCard";
-import RocketIcon from "@mui/icons-material/Rocket";
 import GrassIcon from "@mui/icons-material/Grass";
+import RocketIcon from "@mui/icons-material/Rocket";
 import SavingsIcon from "@mui/icons-material/Savings";
 import SupportIcon from "@mui/icons-material/Support";
-import LiveHelpIcon from "@mui/icons-material/LiveHelp";
-import { StyledButton } from "../UI/shared/StyledButton";
 import { StyledAccordion } from "../UI/shared/StyledAccordion";
-import { useContext } from "react";
-import { MuiBreakpointsContext } from "../contexts/muiBreakpointsContext";
 import { ChooseForm } from "./FormTemplates/ChooseForm";
 
 const cardsArr = [

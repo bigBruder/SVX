@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { FC, useContext } from "react";
 import { MuiBreakpointsContext } from "../../contexts/muiBreakpointsContext";
 
@@ -13,7 +13,7 @@ export const NavButton: FC<
 
   return (
     <Stack
-    {...props}
+      {...props}
       direction="row"
       alignItems="center"
       gap={1}
@@ -23,39 +23,37 @@ export const NavButton: FC<
         },
       }}
     >
-
-        {isIcontFirst ? (
-          <>
-            <IconComponent fontSize="small" />
-            {small && (
-              <Typography
-                sx={{
-                  color: "black",
-                  fontWeight: "600",
-                  fontSize: "14px",
-                }}
-              >
-                {text}
-              </Typography>
-            )}
-          </>
-        ) : (
-          <>
-            {small && (
-              <Typography
-                sx={{
-                  color: "black",
-                  fontWeight: "600",
-                  fontSize: "14px",
-                }}
-              >
-                {text}
-              </Typography>
-            )}
-            <IconComponent fontSize="small" />
-          </>
-        )}
-  
+      {isIcontFirst ? (
+        <>
+          <IconComponent fontSize="small" />
+          {small && (
+            <Typography
+              sx={{
+                color: "black",
+                fontWeight: "600",
+                fontSize: "14px",
+              }}
+            >
+              {text}
+            </Typography>
+          )}
+        </>
+      ) : (
+        <>
+          {small && (
+            <Typography
+              sx={{
+                color: "black",
+                fontWeight: "600",
+                fontSize: "14px",
+              }}
+            >
+              {text}
+            </Typography>
+          )}
+          <IconComponent fontSize="small" />
+        </>
+      )}
     </Stack>
   );
 };

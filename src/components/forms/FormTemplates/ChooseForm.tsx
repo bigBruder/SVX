@@ -26,9 +26,9 @@ export const ChooseForm: FC<Props> = ({
   subtitle = "Multiple selection possible",
   isShowNoneBth = true,
   isMultiple = true,
-  isCardsShouldDevide = false
+  isCardsShouldDevide = false,
 }) => {
-  const {setCurrentFormIndex, currentFormIndex} = useContext(FormShowContext)
+  const { increaseCurrentFormIndex } = useContext(FormShowContext);
   const { medium } = useContext(MuiBreakpointsContext);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
 
@@ -118,7 +118,9 @@ export const ChooseForm: FC<Props> = ({
           {Accordion}
         </Grid>
         <Grid item xs={12} sm={10} md={10}>
-          <StyledButton onClick={() => setCurrentFormIndex(currentFormIndex + 1)}>Next</StyledButton>
+          <StyledButton onClick={() => increaseCurrentFormIndex()}>
+            Next
+          </StyledButton>
         </Grid>
       </Grid>
     </QuestionMarkLayout>

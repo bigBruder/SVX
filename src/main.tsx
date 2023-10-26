@@ -18,5 +18,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         </MuiBreakpointsProvider>
       </FormShowContextWrapper>
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

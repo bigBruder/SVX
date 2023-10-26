@@ -8,6 +8,7 @@ import { InvestExperienceItem } from "./InvestExperienceItem";
 
 import CorporateFareIcon from "@mui/icons-material/CorporateFare";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
+import { FormShowContext } from "../../contexts/formShow";
 
 const data = [
   {
@@ -22,6 +23,7 @@ const data = [
 
 export const InvestExperienceForm = () => {
   const { medium, large, small } = useContext(MuiBreakpointsContext);
+  const { increaseCurrentFormIndex } = useContext(FormShowContext);
 
   return (
     <Grid container justifyItems="center" justifyContent="center" spacing={2}>
@@ -63,7 +65,9 @@ export const InvestExperienceForm = () => {
         />
       </Grid>
       <Grid item xs={12} sm={10} md={10} lg={8}>
-        <StyledButton>Next</StyledButton>
+        <StyledButton onClick={() => increaseCurrentFormIndex()}>
+          Next
+        </StyledButton>
       </Grid>
     </Grid>
   );

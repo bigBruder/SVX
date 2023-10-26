@@ -1,7 +1,10 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
 
-export const StyledButton: FC<{ children: string } & any> = ({ children, ...props }) => {
+export const StyledButton: FC<{ children: string } & any> = ({
+  children,
+  ...props
+}) => {
   return (
     <Button
       {...props}

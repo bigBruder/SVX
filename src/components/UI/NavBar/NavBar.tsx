@@ -8,10 +8,15 @@ import { FormShowContext } from "../../contexts/formShow";
 interface Props {
   stepCount: number;
   currentStep: number;
+  componentsLength: number;
 }
 
-export const NavBar: FC<Props> = ({ stepCount = 30, currentStep = 2 }) => {
-  const { currentFormIndex, setCurrentFormIndex } = useContext(FormShowContext);
+export const NavBar: FC<Props> = ({
+  stepCount,
+  currentStep,
+  componentsLength,
+}) => {
+  const { decreaseCurrentFormIndex } = useContext(FormShowContext);
 
   return (
     <Grid
@@ -26,7 +31,7 @@ export const NavBar: FC<Props> = ({ stepCount = 30, currentStep = 2 }) => {
         <NavButton
           IconComponent={ArrowBackIosIcon}
           text="RESUME LATER"
-          onClick={() => setCurrentFormIndex(currentFormIndex - 1)}
+          onClick={() => decreaseCurrentFormIndex()}
         />
       </Grid>
       <Grid item xs={9} sm={9} lg={9}>
@@ -40,6 +45,8 @@ export const NavBar: FC<Props> = ({ stepCount = 30, currentStep = 2 }) => {
           value={currentStep}
           defaultValue={stepCount}
           aria-label="Disabled slider"
+          min={0}
+          max={componentsLength - 1}
         />
       </Grid>
       <Grid item container xs={3} sm={3} lg={3} justifyContent="center">

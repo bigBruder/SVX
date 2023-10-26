@@ -14,19 +14,23 @@ import { DisposableIncome } from "../components/forms/range/DisposableIncome";
 import { InvestmentRangeForm } from "../components/forms/range/InvestmentRangeForm";
 import { NetMouthIncome } from "../components/forms/range/NetMouhtIncome";
 import { NotDisposableWealth } from "../components/forms/range/NonDisposableWealth";
+import { TotalMonthExpens } from "../components/forms/range/TotalMonthExpens";
+import { Liabilities } from "../components/forms/range/Liabilities";
 
 const formsElements = [
   GoalInputForm,
   InvestmentRangeForm,
-  InvestmentKnowladgeForm,
   LossConcernForm,
+  InvestmentKnowladgeForm,
   InvestExperienceForm,
   FamiliarService,
   RevlantExperience,
-  ExpenseCoverTime,
   NetMouthIncome,
+  TotalMonthExpens,
   DisposableIncome,
   NotDisposableWealth,
+  Liabilities,
+  ExpenseCoverTime
 ];
 
 export const FormPage = () => {

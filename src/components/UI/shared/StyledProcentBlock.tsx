@@ -4,9 +4,11 @@ import { FC } from "react";
 export const StyledProcentBlock: FC<{
   title: string;
   heightPercentage: number;
-}> = ({ title, heightPercentage }) => {
+  ml?: string;
+}> = ({ title, heightPercentage, ml }) => {
   return (
     <Box
+      ml={ml}
       sx={{
         height: heightPercentage + "%",
         borderLeft: "1px dashed",

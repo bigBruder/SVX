@@ -8,6 +8,7 @@ export const ChooseCard: FC<{
   isSelected?: boolean;
   index: number;
   handleSelect: (index: number) => void;
+  isTwoRows?: boolean;
 }> = ({
   Icon,
   title,
@@ -15,6 +16,7 @@ export const ChooseCard: FC<{
   isSelected = false,
   handleSelect,
   index,
+  isTwoRows = false
 }) => {
   const [isShowDefaultBg, setIsShowDefaultBg] = useState(false);
 
@@ -45,10 +47,10 @@ export const ChooseCard: FC<{
         setIsShowDefaultBg(false);
       }}
     >
-      <Grid item xs={2}>
+      <Grid item xs={isTwoRows ? 3 : 2}>
         <Icon sx={{ width: "48px", height: "48px" }} />
       </Grid>
-      <Grid item xs={10}>
+      <Grid item xs={isTwoRows ? 9 : 10}>
         <Box
           display="flex"
           flexDirection="column"

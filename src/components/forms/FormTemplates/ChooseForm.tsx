@@ -31,6 +31,7 @@ export const ChooseForm: FC<Props> = ({
   const { increaseCurrentFormIndex } = useContext(FormShowContext);
   const { medium } = useContext(MuiBreakpointsContext);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  isCardsShouldDevide = medium ? isCardsShouldDevide : false;
 
   const onCardClick = (index: number) => {
     if (!isMultiple) {
@@ -83,6 +84,7 @@ export const ChooseForm: FC<Props> = ({
             >
               {selectedItems.includes(index) ? (
                 <ChooseCard
+                  isTwoRows={isCardsShouldDevide}
                   {...cartItem}
                   index={index}
                   isSelected={true}
@@ -90,6 +92,7 @@ export const ChooseForm: FC<Props> = ({
                 />
               ) : (
                 <ChooseCard
+                  isTwoRows={isCardsShouldDevide}
                   {...cartItem}
                   index={index}
                   handleSelect={onCardClick}

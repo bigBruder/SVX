@@ -38,8 +38,8 @@ export const FamiliarService = () => {
     <ChooseForm
       Accordion={<Accordion />}
       cardsArr={cardsArr}
-      subtitle="Which financial services are you familiar with?"
-      title="Multiple selection possible"
+      subtitle="Multiple selection possible"
+      title="Which financial services are you familiar with?"
     />
   );
 };
